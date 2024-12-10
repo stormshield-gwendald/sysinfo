@@ -76,6 +76,8 @@ linux-tmpfs = []
 debug = ["libc/extra_traits"]
 # This feature is used on CI to emulate unknown/unsupported target.
 unknown-ci = []
+# Used to enable software interfaces filtering
+filter-software-interfaces = []
 
 [package.metadata.docs.rs]
 features = ["serde"]

@@ -51,6 +51,7 @@ impl NetworksInner {
             let ptr = (*table).Table.as_ptr();
             for i in 0..(*table).NumEntries {
                 let ptr = &*ptr.offset(i as _);
+                #[cfg(feature = "filter-software-interfaces")]
                 if (ptr.TransmitLinkSpeed == 0 && ptr.ReceiveLinkSpeed == 0)
                     || ptr.MediaConnectState == MediaConnectStateDisconnected
                     || ptr.PhysicalAddressLength == 0
